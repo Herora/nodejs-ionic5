@@ -1,0 +1,64 @@
+<div class="tarjet">
+    <div class="card">
+        <p class="title">(+{{arrayData.country_mobile_code}}) {{arrayData.formatted_line_number}}</p>
+        <div class="cardContent">
+            <div class="description">
+                <div>
+                    <p>Fecha de Vencimiento</p>
+                    <p>{{arrayData.expiration_date}}</p>
+                </div>
+                <div>
+                    <p>Referencia de pago</p>
+                    <p><strong>{{arrayData.payment_reference}}</strong></p>
+                </div>
+            </div>
+
+            <div class="description">
+                <div>
+                    <p>Fecha de ultimo pago</p>
+                    <p>{{arrayData.last_payment_date}}</p>
+                    <div>
+                        <p>Estado de la Factura</p>
+                        <p class="{{arrayData.invoice_status}} status">{{arrayData.invoice_status |uppercase}}</p>
+                    </div>
+                </div>
+                <div class="center">
+                    <p>Valor a pagar</p>
+                    <p class="properties">{{arrayData.currency}} {{arrayData.amount}}</p>
+                </div>
+            </div>
+            <div class="description">
+                <p class="center link" (click)="viewHistoryM()">Ver historial de pagos</p>
+                <ion-button (click)="presentAlert(arrayData._id)">Pagar</ion-button>
+            </div>
+        </div>
+    </div>
+
+    <div class="viewHistoryC" *ngIf="viewHistory">
+        <H1>Historial de pagos</H1>
+        <ion-grid>
+            <ion-row>
+                <ion-col size="8">
+                    <p><strong>Periodo</strong></p>
+                </ion-col>
+                <ion-col size="2">
+                    <p><strong>Valor</strong></p>
+                </ion-col>
+                <ion-col size="2">
+                    <p><strong>Saldo</strong></p>
+                </ion-col>
+            </ion-row>
+            <ion-row class="space" *ngFor="let item of arrayData.payment_history">
+                <ion-col size="8">
+                    <p>{{item.period}}</p>
+                </ion-col>
+                <ion-col size="2">
+                    <p>${{item.amount}}</p>
+                </ion-col>
+                <ion-col class="center" size="2">
+                    <p>{{item.balance}}</p>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </div>
+</div>

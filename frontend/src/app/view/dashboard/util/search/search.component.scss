@@ -1,0 +1,79 @@
+.content {
+    display: block;
+    width: 100%;
+    max-width: 350px;
+    padding: 15px;
+    ion-input {
+        text-align: center;
+    }
+    .inputSearch {
+        display: flex;
+        border: 1px solid gray;
+        border-radius: 35px;
+        padding-right: 3px;
+        ion-button {
+            --border-radius: 20px;
+        }
+    }
+    .card {
+        height: 100%;
+        max-height: 350px;
+        overflow-y: auto;
+        .cardContent {
+            padding: 15px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            width: 100%;
+            display: block;
+            border-bottom: 1px solid gray;
+            .description {
+                padding-top: 10px;
+                display: flex;
+                justify-content: space-between;
+            }
+            .amount {
+                font-size: 22px;
+            }
+            .vencida,
+            .Vencida {
+                color: red;
+            }
+            .por,
+            .Por {
+                color: #3880ff;
+            }
+        }
+        .cardContent:active {
+            transition: background-color 1s;
+            border-radius: 10px;
+            color: white;
+            background-color: #3880ff;
+            .vencida,
+            .Vencida {
+                color: #ffffff;
+            }
+            .por,
+            .Por {
+                color: #ffffff;
+            }
+        }
+        .cardContent:hover {
+            transition: background-color 1s;
+            border-radius: 10px;
+            color: white;
+            background-color: #3880ff;
+            .Vencida {
+                color: #ffffff;
+            }
+            .vencida {
+                color: #ffffff;
+            }
+            .por {
+                color: #ffffff;
+            }
+            .Por {
+                color: #ffffff;
+            }
+        }
+    }
+}

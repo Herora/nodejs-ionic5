@@ -1,0 +1,25 @@
+// .header-md::after {
+//     display: none;
+// }
+ion-toolbar.background {
+    --background: #1350a5;
+    --color: #ffffff;
+}
+
+ion-toolbar.header {
+    border-radius: 0px 0px 26px 26px;
+}
+
+ion-toolbar.background.footer {
+    margin-top: 100px;
+}
+
+ion-header {
+    z-index: 9999;
+}
+
+.ionRow {
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+}

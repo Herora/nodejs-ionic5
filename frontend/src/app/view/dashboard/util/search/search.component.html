@@ -1,0 +1,32 @@
+<ion-grid>
+    <ion-row>
+        <ion-col size-lg="5" size-md="5" size-sm="12" size-xs="12">
+            <div class="content">
+                <div class="inputSearch">
+                    <ion-input type="number" placeholder="Buscar por número" [(ngModel)]="searchNumber">
+                    </ion-input>
+                    <ion-button class="button" (click)="search()">
+                        <ion-icon name="search-outline"></ion-icon>
+                    </ion-button>
+                </div>
+
+                <div class="card">
+                    <div class="cardContent" *ngFor="let item of data" (click)="viewData(item._id)">
+                        <div class="description"> (+{{item.country_mobile_code}}) {{ item.formatted_line_number }}
+                            <div class="{{item.invoice_status}}">{{item.invoice_status | uppercase}}</div>
+                        </div>
+                        <div class="description">
+                            <div class="amount">{{item.currency}} {{item.amount}}</div>
+                            <div>{{item.expiration_date}}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </ion-col>
+        <ion-col size-lg="7" size-md="7" size-sm="12" size-xs="12">
+            <div>
+                <app-tarjet [dataIntro]="datalocal"></app-tarjet>
+            </div>
+        </ion-col>
+    </ion-row>
+</ion-grid>

@@ -1,0 +1,25 @@
+<ion-header class="ion-no-border">
+    <ion-toolbar class="background header">
+        <app-header></app-header>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+    <ion-toolbar class="content">
+        <ion-title>
+            <h1>Pagar Factura</h1>
+        </ion-title>
+        <ion-grid>
+            <ion-row class="ionRow">
+                <ion-col>
+                    <app-search [data]="data" [idDefault]="idDe"></app-search>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </ion-toolbar>
+</ion-content>
+
+<ion-toolbar class="background footer">
+    <app-footer></app-footer>
+</ion-toolbar>
